@@ -1,0 +1,83 @@
+name,longitude,latitude,url
+Los Angeles Office,-118.243683,34.052235,https://www.la-office.com
+Chicago Office,-87.623177,41.881832,https://www.chi-office.com
+Houston Office,-95.369804,29.760427,https://www.hou-office.com
+San Francisco Office,-122.419418,37.774929,https://www.sf-office.com
+Miami Office,-80.191788,25.761681,https://www.miami-office.com
+St. Louis Office,-90.199402,38.627003,https://www.stl-office.com
+Austin Office,-97.743057,30.267153,https://www.austin-office.com
+Dallas Office,-96.797,32.7767,https://www.dallas-office.com
+Seattle Office,-122.3321,47.6062,https://www.seattle-office.com
+Denver Office,-104.9903,39.7392,https://www.denver-office.com
+Boston Office,-71.0589,42.3601,https://www.boston-office.com
+Washington DC Office,-77.0369,38.9072,https://www.dc-office.com
+Las Vegas Office,-115.1398,36.1699,https://www.vegas-office.com
+Atlanta Office,-84.388,33.749,https://www.atlanta-office.com
+Phoenix Office,-112.074,33.4484,https://www.phx-office.com
+San Diego Office,-117.1611,32.7157,https://www.sandiego-office.com
+Philadelphia Office,-75.1652,39.9526,https://www.philly-office.com
+Minneapolis Office,-93.265,44.9778,https://www.mpls-office.com
+Portland Office,-122.6765,45.5231,https://www.portland-office.com
+Orlando Office,-81.3792,28.5383,https://www.orlando-office.com
+San Antonio Office,-98.4936,29.4241,https://www.sa-office.com
+Charlotte Office,-80.8431,35.2271,https://www.charlotte-office.com
+Baltimore Office,-76.6122,39.2904,https://www.baltimore-office.com
+Detroit Office,-83.0458,42.3314,https://www.detroit-office.com
+Indianapolis Office,-86.1581,39.7684,https://www.indy-office.com
+Raleigh Office,-78.6382,35.7796,https://www.raleigh-office.com
+Nashville Office,-86.7816,36.1627,https://www.nashville-office.com
+Tampa Office,-82.4572,27.9506,https://www.tampa-office.com
+Milwaukee Office,-87.9065,43.0389,https://www.milwaukee-office.com
+Cleveland Office,-81.6944,41.4993,https://www.cleveland-office.com
+Kansas City Office,-94.5786,39.0997,https://www.kc-office.com
+Pittsburgh Office,-79.9959,40.4406,https://www.pittsburgh-office.com
+Cincinnati Office,-84.512,39.1031,https://www.cincy-office.com
+Sacramento Office,-121.4944,38.5816,https://www.sac-office.com
+Columbus Office,-82.9988,39.9612,https://www.columbus-office.com
+San Jose Office,-121.8863,37.3382,https://www.sanjose-office.com
+Jacksonville Office,-81.6556,30.3322,https://www.jax-office.com
+Memphis Office,-90.049,35.1495,https://www.memphis-office.com
+Oklahoma City Office,-97.5164,35.4676,https://www.okc-office.com
+Louisville Office,-85.7585,38.2527,https://www.louisville-office.com
+Richmond Office,-77.436,37.5407,https://www.richmond-office.com
+New Orleans Office,-90.0715,29.9511,https://www.nola-office.com
+Hartford Office,-72.6851,41.7637,https://www.hartford-office.com
+Buffalo Office,-78.8784,42.8864,https://www.buffalo-office.com
+Birmingham Office,-86.8025,33.5186,https://www.bham-office.com
+Albany Office,-73.7562,42.6526,https://www.albany-office.com
+Dayton Office,-84.1916,39.7589,https://www.dayton-office.com
+Grand Rapids Office,-85.6681,42.9634,https://www.gr-office.com
+Boise Office,-116.2023,43.615,https://www.boise-office.com
+Salt Lake City Office,-111.891,40.7608,https://www.slc-office.com
+Tacoma Office,-122.4443,47.2529,https://www.tacoma-office.com
+Anchorage Office,-149.9003,61.2181,https://www.anchorage-office.com
+Providence Office,-71.4128,41.824,https://www.providence-office.com
+Madison Office,-89.4012,43.0731,https://www.madison-office.com
+Des Moines Office,-93.6091,41.5868,https://www.desmoines-office.com
+Wichita Office,-97.3301,37.6872,https://www.wichita-office.com
+Spokane Office,-117.426,47.6588,https://www.spokane-office.com
+Reno Office,-119.8138,39.5296,https://www.reno-office.com
+Norfolk Office,-76.2859,36.8508,https://www.norfolk-office.com
+Fresno Office,-119.7871,36.7378,https://www.fresno-office.com
+Lincoln Office,-96.6852,40.8136,https://www.lincoln-office.com
+Lexington Office,-84.5037,38.0406,https://www.lexington-office.com
+Fort Wayne Office,-85.1394,41.0793,https://www.fortwayne-office.com
+Greensboro Office,-79.791,36.0726,https://www.greensboro-office.com
+Shreveport Office,-93.7502,32.5252,https://www.shreveport-office.com
+Mobile Office,-88.0399,30.6954,https://www.mobile-office.com
+Chattanooga Office,-85.3097,35.0456,https://www.chattanooga-office.com
+Baton Rouge Office,-91.1403,30.4507,https://www.batonrouge-office.com
+Little Rock Office,-92.2896,34.7465,https://www.littlerock-office.com
+Charleston Office,-79.9311,32.7765,https://www.charleston-office.com
+Syracuse Office,-76.1474,43.0481,https://www.syracuse-office.com
+Santa Fe Office,-105.9378,35.6869,https://www.santafe-office.com
+Wilmington Office,-77.9447,34.2257,https://www.wilmington-office.com
+Augusta Office,-82.0105,33.4735,https://www.augusta-office.com
+Tallahassee Office,-84.2807,30.4383,https://www.tallahassee-office.com
+Charleston WV Office,-81.6326,38.3498,https://www.charlestonwv-office.com
+Roanoke Office,-79.9414,37.2707,https://www.roanoke-office.com
+Savannah Office,-81.0998,32.0809,https://www.savannah-office.com
+Lubbock Office,-101.8552,33.5779,https://www.lubbock-office.com
+Cape Coral Office,-81.9495,26.5629,https://www.capecoral-office.com
+Huntsville Office,-86.5861,34.7304,https://www.huntsville-office.com
+Macon Office,-83.6324,32.8407,https://www.macon-office.com
