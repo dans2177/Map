@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import personalizedCareImage from "/car_1/1.webp";
 import familySuccessImage from "/car_1/2.webp";
 import thrivingEnvironmentImage from "/car_1/3.webp";
-import logo from "/logo.png";
+// import logo from "/logo.png";
 
 function Home() {
   const navigate = useNavigate();
@@ -68,7 +68,7 @@ function Home() {
 
         {/* Logo at the bottom center */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
-           {/* <img src={logo} alt="Logo" className="h-4 md:h-4" />  */}
+          {/* <img src={logo} alt="Logo" className="h-4 md:h-4" />  */}
           {/* <h1 className="text-white "> App Name</h1> */}
         </div>
       </section>
@@ -168,6 +168,11 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Health Food */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <img
+                src={HealthyFoodImg}
+                alt="Healthy Food"
+                className="w-32 h-32 mx-auto mb-4 rounded-lg"
+              />
               <h3 className="text-xl font-semibold mb-2">
                 Healthy Food Choices
               </h3>
@@ -178,6 +183,11 @@ function Home() {
             </div>
             {/* Stretches */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <img
+                src={StretchingImg}
+                alt="Daily Stretches"
+                className="w-32 h-32 mx-auto mb-4 rounded-lg"
+              />
               <h3 className="text-xl font-semibold mb-2">Daily Stretches</h3>
               <p className="text-gray-600">
                 Learn effective stretching routines to keep your body flexible
@@ -186,6 +196,11 @@ function Home() {
             </div>
             {/* Items to Help You */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <img
+                src={ErgonomicToolsImg}
+                alt="Ergonomic Tools"
+                className="w-32 h-32 mx-auto mb-4 rounded-lg"
+              />
               <h3 className="text-xl font-semibold mb-2">
                 Ergonomic Tools & Standing Desks
               </h3>
@@ -196,6 +211,11 @@ function Home() {
             </div>
             {/* Blog */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <img
+                src={BlogImg}
+                alt="Health Blog"
+                className="w-32 h-32 mx-auto mb-4 rounded-lg"
+              />
               <h3 className="text-xl font-semibold mb-2">
                 Health & Wellness Blog
               </h3>
@@ -206,6 +226,11 @@ function Home() {
             </div>
             {/* Webinars */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <img
+                src={WebinarsImg}
+                alt="Webinars"
+                className="w-32 h-32 mx-auto mb-4 rounded-lg"
+              />
               <h3 className="text-xl font-semibold mb-2">
                 Webinars & Workshops
               </h3>
