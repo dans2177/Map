@@ -178,8 +178,8 @@ function Home() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {/* Health Food */}
-            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg">
-              <h3 className="text-lg sm:text-xl font-semibold mb-2">
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold mb-2">
                 Healthy Food Choices
               </h3>
               <p className="text-gray-600 text-sm sm:text-base">
@@ -187,26 +187,42 @@ function Home() {
                 overall wellness.
               </p>
             </div>
-
-            {/* Exercise */}
-            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg">
-              <h3 className="text-lg sm:text-xl font-semibold mb-2">
-                Exercise Routines
+            {/* Stretches */}
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold mb-2">Daily Stretches</h3>
+              <p className="text-gray-600">
+                Learn effective stretching routines to keep your body flexible
+                and healthy.
+              </p>
+            </div>
+            {/* Items to Help You */}
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold mb-2">
+                Ergonomic Tools & Standing Desks
               </h3>
               <p className="text-gray-600 text-sm sm:text-base">
                 Explore different workout routines and exercises that help
                 improve your physical health.
               </p>
             </div>
-
-            {/* Mental Health */}
-            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg">
-              <h3 className="text-lg sm:text-xl font-semibold mb-2">
-                Mental Health Support
+            {/* Blog */}
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold mb-2">
+                Health & Wellness Blog
               </h3>
-              <p className="text-gray-600 text-sm sm:text-base">
-                Learn about mental health resources and techniques to support
-                your emotional well-being.
+              <p className="text-gray-600">
+                Stay informed with the latest tips and insights on living a
+                healthy lifestyle.
+              </p>
+            </div>
+            {/* Webinars */}
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold mb-2">
+                Webinars & Workshops
+              </h3>
+              <p className="text-gray-600">
+                Join our live webinars and workshops to learn more about
+                holistic health practices.
               </p>
             </div>
           </div>
