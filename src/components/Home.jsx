@@ -6,6 +6,12 @@ import familySuccessImage from "/car_1/2.webp";
 import thrivingEnvironmentImage from "/car_1/3.webp";
 // import logo from "/logo.png";
 
+import img1 from "/car_2/img_1.webp";
+import img2 from "/car_2/img_2.webp";
+import img3 from "/car_2/img_3.webp";
+import img4 from "/car_2/img_4.webp";
+import img5 from "/car_2/img_5.webp";
+
 function Home() {
   const navigate = useNavigate();
 
@@ -31,7 +37,7 @@ function Home() {
             <FaApple className="text-gray-800" size={16} sm:size={20} />
             <FaGooglePlay className="text-gray-800" size={16} sm:size={20} />
           </div>
-          <div className="flex space-x-2 sm:space-x-4 items-center bg-white bg-opacity-80 rounded-full px-3 py-2 mt-2 sm:mt-0">
+          <div className="hidden md:flex space-x-2 sm:space-x-4 items-center bg-white bg-opacity-80 rounded-full px-3 py-2 mt-2 sm:mt-0">
             <span className="text-xs sm:text-sm font-semibold">
               This Weeks Webinar:
             </span>
@@ -74,9 +80,17 @@ function Home() {
         </div>
 
         {/* Logo at the bottom center */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="absolute flex-col  bottom-4 left-1/2 transform -translate-x-1/2 z-20 ">
           {/* <img src={logo} alt="Logo" className="h-4 md:h-4" />  */}
-          {/* <h1 className="text-white "> App Name</h1> */}
+          {/* <h1 className="text-white"> App Name</h1> */}
+          <div className="flex md:hidden space-x-2 sm:space-x-4 items-center bg-white bg-opacity-80 rounded-full px-3 py-2 mt-2 sm:mt-0">
+            <span className="text-xs sm:text-sm font-semibold">
+              This Weeks Webinar:
+            </span>
+            <span className="text-xs sm:text-sm font-semibold">
+              Practicing Good Posture
+            </span>
+          </div>
         </div>
       </section>
 
@@ -172,13 +186,19 @@ function Home() {
 
       {/* Holistic Health Bottom Section */}
       <section className="bg-gray-200 py-10 sm:py-20">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 text-center ">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">
             Holistic Health for a Better You
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
+          {/* Center the divs in this div  */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 ">
             {/* Health Food */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <img
+                src={img1}
+                alt="Healthy Food Choices"
+                className="mb-4 w-full h-fit object-cover rounded-md"
+              />
               <h3 className="text-xl font-semibold mb-2">
                 Healthy Food Choices
               </h3>
@@ -189,6 +209,11 @@ function Home() {
             </div>
             {/* Stretches */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <img
+                src={img2}
+                alt="Daily Stretches"
+                className="mb-4 w-full h-fit object-cover rounded-md"
+              />
               <h3 className="text-xl font-semibold mb-2">Daily Stretches</h3>
               <p className="text-gray-600">
                 Learn effective stretching routines to keep your body flexible
@@ -197,6 +222,11 @@ function Home() {
             </div>
             {/* Items to Help You */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <img
+                src={img3}
+                alt="Ergonomic Tools & Standing Desks"
+                className="mb-4 w-full h-fit object-cover rounded-md"
+              />
               <h3 className="text-xl font-semibold mb-2">
                 Ergonomic Tools & Standing Desks
               </h3>
@@ -207,6 +237,11 @@ function Home() {
             </div>
             {/* Blog */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <img
+                src={img4}
+                alt="Health & Wellness Blog"
+                className="mb-4 w-full h-fit object-cover rounded-md"
+              />
               <h3 className="text-xl font-semibold mb-2">
                 Health & Wellness Blog
               </h3>
@@ -217,6 +252,11 @@ function Home() {
             </div>
             {/* Webinars */}
             <div className="bg-white p-6 rounded-lg shadow-lg">
+              <img
+                src={img5}
+                alt="Webinars & Workshops"
+                className="mb-4 w-full h-fit object-cover rounded-md"
+              />
               <h3 className="text-xl font-semibold mb-2">
                 Webinars & Workshops
               </h3>
@@ -225,12 +265,23 @@ function Home() {
                 holistic health practices.
               </p>
             </div>
+            {/* Webinars */}
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              {/* <img
+                src={}
+                alt="Webinars & Workshops"
+                className="mb-4 w-full h-fit object-cover rounded-md"
+              /> */}
+              <h3 className="text-xl font-semibold mb-2 mt-40">
+                SO MUCH MORE!
+              </h3>
+              <p className="text-gray-600"></p>
+            </div>
           </div>
         </div>
       </section>
     </div>
   );
 }
-
 
 export default Home;

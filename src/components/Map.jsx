@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Papa from "papaparse";
-import { FaSearchLocation } from "react-icons/fa";
+import { FaSearchLocation, FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function Map() {
   const mapContainerRef = useRef(null);
@@ -11,6 +12,11 @@ function Map() {
   const [sortedOffices, setSortedOffices] = useState([]);
   const [offices, setOffices] = useState([]);
   const [zipCode, setZipCode] = useState("");
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate("/");
+  };
 
   // Fetch and parse the CSV file
   useEffect(() => {
@@ -105,11 +111,27 @@ function Map() {
           .addTo(mapRef.current);
 
         const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-          `<div style="text-align: center;">
-          <strong>${office.name}</strong><br />
-          <a href="${office.url}" target="_blank" style="color: blue; text-decoration: underline;">Visit Website</a>
+          `<div style="background-color: #1E1E1E; border-radius: 12px; padding: 15px; color: white; max-width: 300px; font-family: Arial, sans-serif;">
+          <div style="display: flex; align-items: center;">
+            <img src="${office.image || "placeholder.webp"}" alt="${
+            office.name
+          }" style="width: 50px; height: 50px; border-radius: 8px; margin-right: 15px;" />
+            <div style="flex-grow: 1;">
+              <strong style="font-size: 18px;">${office.name}</strong><br />
+             
+            </div>
+          </div>
+          <div style="margin-top: 10px; text-align: left;">
+            <a href="${
+              office.url
+            }" target="_blank" style="color: #1E90FF; text-decoration: none; font-size: 14px;">Visit Website</a><br /><br />
+            <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
+              Book Now
+            </button>
+          </div>
         </div>`
         );
+
         marker.setPopup(popup);
 
         marker.getElement().addEventListener("click", () => {
@@ -190,44 +212,128 @@ function Map() {
   };
 
   return (
-    <div className="h-screen flex flex-col md:flex-row bg-blue-100">
-      <div className="md:w-1/3 md:h-full w-full h-2/5 flex flex-col bg-white shadow-lg m-4 md:m-0">
-        <h2 className="text-2xl font-bold p-4 bg-blue-500 text-white text-center ">
-          Office Locations
-        </h2>
-        <div className="p-4 flex flex-col">
-          <div className="relative mb-2">
+    <div className="relative h-screen bg-gray-900">
+      {/* Sidebar for larger screens */}
+      <div className="hidden md:flex absolute top-4 left-4 w-80 md:w-96 bg-gray-800 bg-opacity-90 rounded-lg shadow-lg p-4 z-10">
+        <div className="flex flex-col w-full">
+          <div className="flex">
+            <button
+              onClick={handleBack}
+              className="flex items-center mb-4 text-white text-sm md:text-base"
+            >
+              <FaArrowLeft className="mr-2" />
+            </button>
+            <h2 className="text-lg md:text-2xl font-semibold text-white mb-4">
+              Office Locations
+            </h2>
+          </div>
+          <div className="relative mb-4">
             <input
               type="text"
               value={zipCode}
               onChange={(e) => setZipCode(e.target.value)}
               placeholder="Enter ZIP Code"
-              className="w-full py-2 px-4 rounded border pr-10"
+              className="w-full py-2 px-4 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <FaSearchLocation
               onClick={handleZipCodeLookup}
               className="absolute right-3 top-3 text-blue-500 cursor-pointer"
-              size={20}
+              size={24}
             />
           </div>
-        </div>
-        <div className="flex-grow overflow-y-auto">
-          <ul>
-            {sortedOffices.map((office) => (
-              <li
-                key={office.name}
-                onClick={() => handleOfficeClick(office)}
-                className="cursor-pointer p-4 border-b"
-              >
-                <h3 className="font-semibold">{office.name}</h3>
-                <p>{office.distance.toFixed(2)} miles away</p>
-              </li>
-            ))}
-          </ul>
+          <div className="max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600">
+            <ul className="divide-y divide-gray-700">
+              {sortedOffices.map((office) => (
+                <li
+                  key={office.name}
+                  onClick={() => handleOfficeClick(office)}
+                  className="cursor-pointer p-4 hover:bg-gray-700 transition duration-200"
+                >
+                  <h3 className="font-medium text-white">{office.name}</h3>
+                  <div className="flex items-center justify-between">
+                    <p className="text-sm text-gray-400">
+                      {office.distance.toFixed(2)} miles away
+                    </p>
+                    <div className="flex items-center">
+                      <span className="text-yellow-400 text-sm mr-1">
+                        ★★★★★
+                      </span>
+                      <span className="text-gray-400 text-sm">(123)</span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-500">Open 9 AM - 5 PM</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-      <div ref={mapContainerRef} className="flex-grow w-full h-full relative">
-        {/* Mapbox's GeolocateControl will handle recentering */}
+
+      <div className="flex flex-col h-screen">
+        {/* Top half with the map */}
+        <div
+          ref={mapContainerRef}
+          className="flex-grow w-full h-1/2 md:h-1/2 bg-gray-700"
+        >
+          {/* Mapbox's GeolocateControl will handle recentering */}
+        </div>
+
+        {/* Bottom half with the list */}
+        <div className="flex md:hidden w-full h-1/2 overflow-auto bg-gray-800 bg-opacity-90 rounded-t-lg shadow-lg p-4 z-10">
+          <div className="flex flex-col w-full h-full">
+            <div className="flex">
+              <button
+                onClick={handleBack}
+                className="flex items-center mb-4 text-white text-sm"
+              >
+                <FaArrowLeft className="mr-2" />
+              </button>
+              <h2 className="text-lg font-semibold text-white mb-4">
+                Office Locations
+              </h2>
+            </div>
+
+            <div className="flex-grow h-full overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600">
+              <div className="relative mb-4">
+                <input
+                  type="text"
+                  value={zipCode}
+                  onChange={(e) => setZipCode(e.target.value)}
+                  placeholder="Enter ZIP Code"
+                  className="w-full py-2 px-4 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <FaSearchLocation
+                  onClick={handleZipCodeLookup}
+                  className="absolute right-3 top-3 text-blue-500 cursor-pointer"
+                  size={24}
+                />
+              </div>
+              <ul className="divide-y divide-gray-700">
+                {sortedOffices.map((office) => (
+                  <li
+                    key={office.name}
+                    onClick={() => handleOfficeClick(office)}
+                    className="cursor-pointer p-4 hover:bg-gray-700 transition duration-200"
+                  >
+                    <h3 className="font-medium text-white">{office.name}</h3>
+                    <div className="flex items-center justify-between">
+                      <p className="text-sm text-gray-400">
+                        {office.distance.toFixed(2)} miles away
+                      </p>
+                      <div className="flex items-center">
+                        <span className="text-yellow-400 text-sm mr-1">
+                          ★★★★★
+                        </span>
+                        <span className="text-gray-400 text-sm">(123)</span>
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-500">Open 9 AM - 5 PM</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

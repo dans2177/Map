@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.mapboxgl-popup {
+  background-color: transparent; /* Remove the white background */
+  box-shadow: none; /* Remove the shadow if there's any */
+}
+
+.mapboxgl-popup-content {
+  background-color: #1e1e1e !important; /* Dark background */
+  color: white; /* White text */
+  border-radius: 12px; /* Round corners */
+  padding: 10px;
+}
+
+.mapboxgl-popup-tip {
+  border-bottom-color: #1e1e1e !important; /* Match the popup background */
+}
+.mapboxgl-popup-close-button {
+    padding: 10px; /* Add padding around the button */
+    margin-top: 5px; /* Optional: Adjust the margin for better spacing */
+    margin-right: 5px; /* Optional: Adjust the margin for better spacing */
+    background-color: transparent; /* Keep the background transparent */
+    color: white; /* Ensure the close icon is visible */
+    border-radius: 50%; /* Make the button circular, if desired */
+}
