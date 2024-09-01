@@ -2,7 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Papa from "papaparse";
-import { FaSearchLocation, FaArrowLeft } from "react-icons/fa";
+import {
+  FaSearchLocation,
+  FaArrowLeft,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaEnvelope,
+} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 function Map() {
@@ -112,26 +118,42 @@ function Map() {
 
         const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
           `<div style="background-color: #1E1E1E; border-radius: 12px; padding: 15px; color: white; max-width: 300px; font-family: Arial, sans-serif;">
-          <div style="display: flex; align-items: center;">
-            <img src="${office.image || "placeholder.webp"}" alt="${
+    <div style="display: flex; align-items: center;">
+      <img src="${office.image || "placeholder.webp"}" alt="${
             office.name
           }" style="width: 50px; height: 50px; border-radius: 8px; margin-right: 15px;" />
-            <div style="flex-grow: 1;">
-              <strong style="font-size: 18px;">${office.name}</strong><br />
-             
-            </div>
-          </div>
-          <div style="margin-top: 10px; text-align: left;">
-            <a href="${
-              office.url
-            }" target="_blank" style="color: #1E90FF; text-decoration: none; font-size: 14px;">Visit Website</a><br /><br />
-            <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
-              Book Now
-            </button>
-          </div>
-        </div>`
+      <div style="flex-grow: 1;">
+        <strong style="font-size: 18px;">${
+          office.name || "Office Name"
+        }</strong><br />
+      
+      </div>
+    </div>
+    <div style="margin-top: 10px; text-align: left;">
+      <div style="display: flex; align-items: center; font-size: 14px; margin-bottom: 5px;">
+        <FaPhoneAlt style="margin-right: 8px;"/> ${
+          office.phone || "(123) 456-7890"
+        }
+      </div>
+      <div style="display: flex; align-items: center; font-size: 14px; margin-bottom: 5px;">
+        <FaMapMarkerAlt style="margin-right: 8px;"/> ${
+          office.address || "123 Placeholder St, City"
+        }
+      </div>
+      <div style="display: flex; align-items: center; font-size: 14px; margin-bottom: 15px;">
+        <FaEnvelope style="margin-right: 8px;"/> ${
+          office.email || "email@example.com"
+        }
+      </div>
+      <a href="${
+        office.url || "#"
+      }" target="_blank" style="color: #1E90FF; text-decoration: none; font-size: 14px;">Visit Website</a><br /><br />
+      <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
+        Book Now
+      </button>
+    </div>
+  </div>`
         );
-
         marker.setPopup(popup);
 
         marker.getElement().addEventListener("click", () => {
