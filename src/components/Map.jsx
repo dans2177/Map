@@ -56,10 +56,10 @@ function Map() {
       .catch((error) => console.error("Error fetching CSV:", error));
   }, []);
 
+const apiKey = import.meta.env.VITE_MAP_APIKEY;
   // Initialize the map and request user location on page load
   useEffect(() => {
-    mapboxgl.accessToken =
-      "pk.eyJ1IjoiZGFuczIxNyIsImEiOiJjbTAwOXNqaDUxbTdkMmpweHJ6bWVyMmdwIn0.65Lxy8UPm2Xd1o11WdH0Pg";
+    mapboxgl.accessToken = apiKey;
 
     mapRef.current = new mapboxgl.Map({
       container: mapContainerRef.current,
